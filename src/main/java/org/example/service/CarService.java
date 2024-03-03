@@ -12,55 +12,27 @@ public class CarService {
         int x = position[0];
         int y = position[1];
 
-        System.out.println("width : " + width);
-        System.out.println("height : " + height);
-        System.out.println("X : " + x);
-        System.out.println("Y : " + y);
         //FFRFFFRRLF
         for (char command : commands.toCharArray()) {
             if (command == 'F') {
                 switch (orientation) {
                     case 'N':
-                        if (y + 1 < height){
-                            y++;
-                            System.out.println("N TRUE Y : " + y);
-                        } else {
-                            System.out.println("N FALSE Y : " + y);
-                        }
+                        if (y + 1 < height) y++;
                         break;
                     case 'E':
-                        if (x + 1 < width){
-                            x++;
-                            System.out.println("E TRUE X : " + x);
-                        } else {
-                            System.out.println("E FALSE X : " + x);
-                        }
+                        if (x + 1 < width) x++;
                         break;
                     case 'S':
-                        if (y - 1 >= 0){
-                            y--;
-                            System.out.println("S TRUE Y : " + y);
-                        } else {
-                            System.out.println("S FALSE Y : " + y);
-                        }
+                        if (y - 1 >= 0) y--;
                         break;
                     case 'W':
-                        if (x - 1 >= 0){
-                            x--;
-                            System.out.println("W TRUE : X " + x);
-                        } else {
-                            System.out.println("W FALSE : X " + x);
-                        }
+                        if (x - 1 >= 0) x--;
                         break;
                 }
             } else if (command == 'L') {
-                System.out.println("Original L orientation : " + orientation);
                 orientation = turnLeft(orientation);
-                System.out.println("Changed L orientation : " + orientation);
             } else if (command == 'R') {
-                System.out.println("Original R orientation : " + orientation);
                 orientation = turnRight(orientation);
-                System.out.println("Changed R orientation : " + orientation);
             }
         }
 

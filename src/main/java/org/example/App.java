@@ -27,6 +27,5 @@ public class App
         String collisionInfo = carService.moveParallel(field, cars);
         System.out.println(collisionInfo);
 
-        System.out.println( "Hello World!" );
     }
 }
